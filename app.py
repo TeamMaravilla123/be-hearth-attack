@@ -4,9 +4,12 @@ import pandas as pd
 from openai import OpenAI
 import logging
 import os
+from flask_cors import CORS
+
 
 app = Flask(__name__)
 
+CORS(app)  # This will allow all origins by default
 # Configure logging
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
