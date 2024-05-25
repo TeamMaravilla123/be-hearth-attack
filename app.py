@@ -39,7 +39,7 @@ def create_gpt_completion(prompt):
 
 def construir_prompt(edad, genero, frecuencia_cardiaca, presion_sistolica, presion_diastolica, azucar_sangre, ck_mb, troponina, clase_ataque_cardiaco):
     # Definir la categoría del resultado de la clase
-    estado_ataque_cardiaco = "No presenta riezgo de ataque al corazón" if clase_ataque_cardiaco == "negative" else "Presenta riezgo de ataque al corazón    "
+    estado_ataque_cardiaco = "No presenta riezgo de ataque al corazón" if clase_ataque_cardiaco == "negative" else "Presenta riezgo de ataque al corazón"
 
     # Construir el prompt
     prompt = (
@@ -53,7 +53,7 @@ def construir_prompt(edad, genero, frecuencia_cardiaca, presion_sistolica, presi
         f"CK-MB: {ck_mb}\n"
         f"Troponina: {troponina}\n"
         f"Conclusión diagnóstica: {estado_ataque_cardiaco}\n\n"
-        f"Con base en la información anterior, por favor proporcione una sugerencia para la condición del paciente. Sé analitico con el resultado y los datos para dar una sugerencia muy concreta. Ten en cuenta que en la sugerencia es importante referenciar la conclusión diagnótica"
+        f"Con base en la información anterior, por favor proporcione una sugerencia para la condición del paciente. Sé analitico con el resultado y los datos para dar una sugerencia muy concreta. Ten en cuenta que en la sugerencia es importante referenciar la conclusión diagnótica, y mencionar  los valores de los indicador que más contribuyeron al diagnóstico y porqué"
     )
 
     return prompt
